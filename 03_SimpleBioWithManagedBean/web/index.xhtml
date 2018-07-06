@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Basit Özgeçmiş</title>
+    </h:head>
+    <h:body>
+        <f:view>
+            <h2>Basit Özgeçmiş Giriş Sayfası</h2>
+            <h:form>
+                
+                <h:panelGrid id="panel" columns="2" border="0">
+                    <f:facet name="header">
+                        <h:outputText value="Bilgi Girişi" />
+                    </f:facet>
+                    
+                    <h:outputText value="Adı : " />
+                    <h:inputText value="#{person.name}" />
+                    
+                    <h:outputText value="Soyadı : " />
+                    <h:inputText value="#{person.surname}" />
+                    
+                    <h:outputText value="Deneyim : " />
+                    <h:selectOneRadio layout="pageDirection" value="#{person.experience}">
+                        <f:selectItem itemValue="JSP" itemLabel="JavaServer Pages" />
+                        <f:selectItem itemValue="JSF" itemLabel="JavaServer Faces" />
+                        <f:selectItem itemValue="Spring" itemLabel="Spring" />
+                        <f:selectItem itemValue="Hibernate" itemLabel="Hibernate" />
+                        <f:selectItem itemValue="PF" itemLabel="PrimeFaces" />
+                    </h:selectOneRadio>
+                    
+                    <h:commandButton value="Temizle" type="reset" />
+                    <h:commandButton value="Gönder" action="#{person.writeConsole}" />
+                    
+                    <f:facet name="footer">
+                        <h:outputText value="Girilen Bilgileriniz:" />
+                    </f:facet>
+                </h:panelGrid>
+                
+                <hr />
+                <h:outputText value="Adı Soyadı : " />
+                <h:outputLabel id="isimSoyisim" value="#{person.name} #{person.surname}" />
+                <br />
+                <h:outputText value="Tecrübe : " />
+                <h:outputLabel id="experience" value="#{person.experience}" />
+                
+            </h:form>
+        </f:view>
+    </h:body>
+</html>
+
