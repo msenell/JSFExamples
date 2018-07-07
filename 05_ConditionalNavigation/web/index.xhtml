@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Ana Sayfa</title>
+    </h:head>
+    <h:body>
+        <f:view>
+            <h:outputText value="Ana Sayfa" />
+            <br />
+            <h:graphicImage value="/img/java.png" style="border:thin solid cyan"/>
+            <h:form>
+                <h:outputLabel for="siparisToplam" value="Toplam Sipariş Tutarı : " />
+                <h:inputText id="siparisToplam" value="#{odemeController.siparisToplam}"
+                             style="color:blue; background-color: #ccffff" />
+                <h:commandButton action="#{odemeController.goToOdeme()}" value="Ödeme Yap" />
+            </h:form>
+            
+            <h:form>
+                <h:commandButton action="#{odemeController.goToSiparis()}" value="Sipariş Listesi" />
+            </h:form>
+            
+            <h:form>
+                <h:commandButton action="#{odemeController.goToUrunler()}" value="Ürünler" />
+            </h:form>
+            
+            <h:form>
+                <h:commandButton action="#{odemeController.goToUyeOl()}" value="Üye Ol" />
+            </h:form>
+        </f:view>
+    </h:body>
+</html>
+
